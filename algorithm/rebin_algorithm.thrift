@@ -1,4 +1,6 @@
 namespace py baa_messages.messages.algorithm.rebin
+namespace cpp baa_messages.messages.algorithm.rebin
+namespace java org.baa_messages.messages.algorithm.rebin
 
 
 struct Reading {

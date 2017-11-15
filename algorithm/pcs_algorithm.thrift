@@ -1,5 +1,8 @@
 include "common.thrift"
+
 namespace py baa_messages.messages.algorithm.pcs
+namespace cpp baa_messages.messages.algorithm.pcs
+namespace java org.baa_messages.messages.algorithm.pcs
 
 struct MetaData {
     1: required string isotope,

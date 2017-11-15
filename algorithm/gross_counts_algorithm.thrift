@@ -1,5 +1,8 @@
-namespace py baa_messages.messages.algorithm.gross_counts
 include "common.thrift"
+
+namespace py baa_messages.messages.algorithm.gross_counts
+namespace cpp baa_messages.messages.algorithm.gross_counts
+namespace java org.baa_messages.messages.algorithm.gross_counts
 
 struct MetaData {
     1: optional common.DetectorElementMapping detector_mapping,

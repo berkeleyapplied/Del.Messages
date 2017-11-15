@@ -1,6 +1,9 @@
-include "common.thrift"
+include "node.thrift"
 include "status.thrift"
+
 namespace py baa_messages.messages.process.control
+namespace cpp baa_messages.messages.process.control
+namespace java org.baa_messages.messages.process.control
 
 enum Command {
     INVALID = 0,
@@ -24,7 +27,7 @@ enum ResultCode {
 }
 
 struct ControlMessage {
-    1: optional common.NodeInfo node_info,
+    1: optional node.NodeInfo node_info,
     2: optional Command command,
     3: optional ResultCode result_code,
     4: optional status.StatusMessage status

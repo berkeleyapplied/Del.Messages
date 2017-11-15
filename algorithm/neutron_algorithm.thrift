@@ -1,5 +1,8 @@
-namespace py baa_messages.messages.algorithm.neutron_algorithm
 include "common.thrift"
+
+namespace py baa_messages.messages.algorithm.neutron_algorithm
+namespace cpp baa_messages.messages.algorithm.neutron_algorithm
+namespace java org.baa_messages.messages.algorithm.neutron_algorithm
 
 struct MetaData {
     1: optional common.DetectorElementMapping detector_mapping,

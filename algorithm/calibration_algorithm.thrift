@@ -1,4 +1,6 @@
 namespace py baa_messages.messages.algorithm.calibration
+namespace cpp baa_messages.messages.algorithm.calibration
+namespace java org.baa_messages.messages.algorithm.calibration
 
 
 struct Characterization {

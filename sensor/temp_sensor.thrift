@@ -1,6 +1,6 @@
-
 namespace py baa_messages.messages.sensor.temperature
-namespace cpp baa_messages.messages.sensor
+namespace cpp baa_messages.messages.sensor.temperature
+namespace java org.baa_messages.messages.sensor.temperature
 
 struct TemperatureReading {
     1: required double temperature

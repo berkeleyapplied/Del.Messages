@@ -1,5 +1,8 @@
 include "common.thrift"
+
 namespace py baa_messages.messages.algorithm.ssc
+namespace cpp baa_messages.messages.algorithm.ssc
+namespace java org.baa_messages.messages.algorithm.ssc
 
 //Create enumeration for detector_elements and ssc_energy_bins
 

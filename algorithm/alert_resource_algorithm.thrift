@@ -1,5 +1,8 @@
 include "common.thrift"
+
 namespace py baa_messages.messages.algorithm.alert_resource
+namespace cpp baa_messages.messages.algorithm.alert_resource
+namespace java org.baa_messages.messages.algorithm.alert_resource
 
 enum ResourceType {
     mp4_thumb,

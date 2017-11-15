@@ -19,7 +19,8 @@
 
 
 namespace py baa_messages.messages.core
-namespace cpp baa_messages.messages
+namespace cpp baa_messages.messages.core
+namespace java org.baa_messages.messages.core
 
 struct BAAContext {
     1: required string parent_id,

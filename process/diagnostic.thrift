@@ -1,4 +1,6 @@
 namespace py baa_messages.messages.process.diagnostic
+namespace cpp baa_messages.messages.process.diagnostic
+namespace java org.baa_messages.messages.process.diagnostic
 
 enum DiagnosticCode {
     INVALID = 0,

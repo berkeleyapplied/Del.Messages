@@ -1,5 +1,6 @@
 namespace py baa_messages.messages.sensor.neutron
-namespace cpp baa_messages.messages.sensor
+namespace cpp baa_messages.messages.sensor.neutron
+namespace java org.baa_messages.messages.sensor.neutron
 
 struct NeutronReading {
     1: optional double counts,

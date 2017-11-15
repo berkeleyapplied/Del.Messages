@@ -1,5 +1,6 @@
 namespace py baa_messages.messages.sensor.gamma
-namespace cpp baa_messages.messages.sensor
+namespace cpp baa_messages.messages.sensor.gamma
+namespace java org.baa_messages.messages.sensor.gamma
 
 struct GammaReading {
     1: required i64 start_time,

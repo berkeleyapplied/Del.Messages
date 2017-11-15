@@ -1,5 +1,6 @@
 namespace py baa_messages.messages.sensor.gps
-namespace cpp baa_messages.messages.sensor
+namespace cpp baa_messages.messages.sensor.gps
+namespace java org.baa_messages.messages.sensor.gps
 
 enum GpsFixType
 {

@@ -1,4 +1,6 @@
 namespace py baa_messages.messages.algorithm.common
+namespace cpp baa_messages.messages.algorithm.common
+namespace java org.baa_messages.messages.algorithm.common
 
 
 struct DetectorElementMapping {

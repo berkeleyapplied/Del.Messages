@@ -29,7 +29,10 @@ include "algorithm/direction_algorithm.thrift"
 include "algorithm/source_location_algorithm.thrift"
 include "algorithm/alert_resource_algorithm.thrift"
 include "algorithm/neutron_algorithm.thrift"
+
 namespace py baa_messages.messages.algorithm
+namespace cpp baa_messages.messages.algorithm
+namespace java org.baa_messages.messages.algorithm
 
 union AlgorithmReading {
     1: gross_counts_algorithm.Reading gross_counts,

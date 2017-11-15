@@ -23,8 +23,10 @@ include "sensor/gamma_sensor.thrift"
 include "sensor/neutron_sensor.thrift"
 include "sensor/temp_sensor.thrift"
 include "sensor/camera_sensor.thrift"
+
 namespace py baa_messages.messages.sensor
 namespace cpp baa_messages.messages.sensor
+namespace java org.baa_messages.messages.sensor
 
 union Reading {
     1: gps_sensor.GpsReading gps,

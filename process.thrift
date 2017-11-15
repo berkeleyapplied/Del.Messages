@@ -21,7 +21,10 @@ include "core.thrift"
 include "process/control.thrift"
 include "process/status.thrift"
 include "process/diagnostic.thrift"
+
 namespace py baa_messages.messages.process
+namespace cpp baa_messages.messages.process
+namespace java org.baa_messages.messages.process
 
 union ProcessType {
     1: control.ControlMessage control,

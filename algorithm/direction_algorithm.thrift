@@ -1,4 +1,6 @@
 namespace py baa_messages.messages.algorithm.direction
+namespace cpp baa_messages.messages.algorithm.direction
+namespace java org.baa_messages.messages.algorithm.direction
 
 struct MetaData {
     1: required string acquisition_uuid,

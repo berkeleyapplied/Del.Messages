@@ -1,5 +1,8 @@
 include "common.thrift"
+
 namespace py baa_messages.messages.algorithm.kedge
+namespace cpp baa_messages.messages.algorithm.kedge
+namespace java org.baa_messages.messages.algorithm.kedge
 
 struct MetaData {
     1: required i32 sensor_id,
