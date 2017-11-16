@@ -69,7 +69,6 @@ if (THRIFT_LIB)
                 string(REGEX REPLACE "${base_dir}" "${output_dir}" _target_base ${_target_base})
                 get_filename_component(_target_name ${thrift_file} NAME_WE)
                 set(_target_dir "${_target_base}/${_target_name}")
-                message("thrift_gen_cpp: ${thrift_file}")
 
                 if(NOT EXISTS ${_target_dir})
                     file(MAKE_DIRECTORY ${_target_dir})
@@ -77,7 +76,8 @@ if (THRIFT_LIB)
                 exec_program(${THRIFT_COMPILER}
                     ARGS -out "${_target_dir}" --gen cpp ${thrift_file}
                     OUTPUT_VARIABLE __thrift_OUT
-                    RETURN_VALUE THRIFT_RETURN)
+                    RETURN_VALUE THRIFT_RETURN
+                )
                 file(GLOB_RECURSE __result_src "${_target_dir}/*.cpp")
                 file(GLOB_RECURSE __result_hdr "${_target_dir}/*.h")
                 file(GLOB_RECURSE __result_skel "${_target_dir}/*skeleton*")
@@ -95,12 +95,17 @@ if (THRIFT_LIB)
                     COMMAND ${THRIFT_COMPILER} -out "${_target_dir}" --gen cpp ${thrift_file}
                     DEPENDS ${thrift_file}
                 )
+                message("thrift_gen_cpp: ${thrift_file}")
+                foreach(file ${_res})
+                    message("                ${file}")
+                endforeach()
             else()
                 message("thrift_gen_cpp: file ${thrift_file} does not exists")
             endif()
             set(${THRIFT_CPP_FILES_LIST} "${_res}" PARENT_SCOPE)
             set(${THRIFT_GEN_INCLUDE_DIR} "${_res_inc_path}" PARENT_SCOPE)
         endfunction()
+
     endif ()
 else ()
     set(THRIFT_FOUND FALSE)

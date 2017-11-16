@@ -95,7 +95,7 @@ elseif(BUILD_C_GLIB AND BUILD_TESTING)
 endif()
 
 # Python
-option(WITH_PYTHON "Build Python Thrift library" OFF)
+option(WITH_PYTHON "Build Python Thrift library" ON)
 find_package(PythonInterp QUIET) # for Python executable
 find_package(PythonLibs QUIET) # for Python.h
 CMAKE_DEPENDENT_OPTION(BUILD_PYTHON "Build Python library" ON
