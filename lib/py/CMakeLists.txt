@@ -1,10 +1,14 @@
 set(DEL_MSG_LIB_PY Del.Messages.Py)
-set(GEN_OUTPUT_PATH_PY "${CMAKE_CURRENT_SOURCE_DIR}/thrift_gen_py")
+if(NOT GEN_OUTPUT_PATH_PY)
+    set(GEN_OUTPUT_PATH_PY "${CMAKE_CURRENT_SOURCE_DIR}/thrift_gen_py")
+endif()
 
+#
+# Remains of an older version - which globbed all files greedily (NOT OPTIMAL)
+#
 function(GenThriftPyOutput source_dir output_dir)
     set(THRIFT_PY_FILES "")
-    if(EXISTS ${output_dir})
-        file(REMOVE_RECURSE ${output_dir})
+    if(NOT EXISTS ${output_dir})
         file(MAKE_DIRECTORY ${output_dir})
     endif()
     file(GLOB_RECURSE input_files "${source_dir}/*.thrift")
@@ -47,5 +51,10 @@ function(GenThriftPyOutput source_dir output_dir)
     )
 endfunction()
 
-GenThriftPyOutput(${THRIFT_SRC_DIR} ${GEN_OUTPUT_PATH_PY})
-
+file(GLOB_RECURSE ${THRIFT_FILES} "${THRIFT_SRC_DIR}/*.thrift")
+add_custom_target(
+    RunBuildThriftPy ALL
+    DEPENDS ${THRIFT_FILES}
+    COMMAND ${CMAKE_COMMAND} -DTHRIFT_COMPILER=${THRIFT_COMPILER} -DBUILD_PY_SRC=${THRIFT_SRC_DIR} -DBUILD_PY_DEST=${GEN_OUTPUT_PATH_PY} -P ${CMAKE_SOURCE_DIR}/cmake/BuildThriftPy.cmake
+    COMMENT "Generating All Del.Messages Py Thrift Resources"
+)

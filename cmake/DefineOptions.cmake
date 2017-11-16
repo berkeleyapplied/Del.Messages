@@ -50,7 +50,7 @@ if (NOT WITH_BOOST_STATIC)
 endif()
 
 # C++
-option(WITH_CPP "Build C++ Thrift library" ON)
+option(WITH_CPP "Build C++ Thrift library" OFF)
 if(WITH_CPP)
     find_package(Boost 1.53 QUIET)
     # NOTE: Currently the following options are C++ specific,
@@ -95,7 +95,7 @@ elseif(BUILD_C_GLIB AND BUILD_TESTING)
 endif()
 
 # Python
-option(WITH_PYTHON "Build Python Thrift library" ON)
+option(WITH_PYTHON "Build Python Thrift library" OFF)
 find_package(PythonInterp QUIET) # for Python executable
 find_package(PythonLibs QUIET) # for Python.h
 CMAKE_DEPENDENT_OPTION(BUILD_PYTHON "Build Python library" ON
@@ -149,6 +149,9 @@ macro(PRINT_CONFIG_SUMMARY)
         MESSAGE_DEP(ANT_FOUND "Ant missing")
     endif()
     message(STATUS "  Build Python library:                       ${BUILD_PYTHON}")
+    if(GEN_OUTPUT_PATH_PY)
+        message(STATUS "  Python Build location:                      ${GEN_OUTPUT_PATH_PY}")
+    endif()
     MESSAGE_DEP(WITH_PYTHON "Disabled by WITH_PYTHON=OFF")
     MESSAGE_DEP(PYTHONLIBS_FOUND "Python libraries missing")
     message(STATUS " Library features:")
